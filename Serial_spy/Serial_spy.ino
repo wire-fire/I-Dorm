@@ -15,27 +15,48 @@ void setup() {
     while (true);
   }
   delay(2000);
+  attachInterrupt(digitalPinToInterrupt(2), blink_, CHANGE);
 }
 
+
 void loop() {
-/*
-  if (Serial.available())
-  {
-    serial = Serial.read();
-    serialStore += String(serial);
-    delay(4);
-  }
-  else
-  {
+  /*
+    if (Serial.available())
+    {
+      serial = Serial.read();
+      serialStore += String(serial);
+      delay(4);
+    }
+    else
+    {
   */
-    //Serial.println(serialStore);
+  //Serial.println(serialStore);
+  for (int i = 0;i<=255;i++){
+    oled.clearDisplay(); // clear display
+    oled.setTextSize(2);          // text size
+    oled.setTextColor(WHITE);     // text color
+    oled.setCursor(5, 16);        // position to display
+    oled.print(i);
+    Serial.print(i);
+    delay(100);
+  }
+}
+
+void blink_ ()
+{
+  char c;
+  String test =  "";
+  //Serial.println("I AM HERE");
+  
+    c = Serial.read();
+    test += c;
     oled.clearDisplay(); // clear display
     oled.setTextSize(1);          // text size
     oled.setTextColor(WHITE);     // text color
     oled.setCursor(5, 16);        // position to display
-    oled.println("Hello World"); // text to display
-    oled.display();               // show on OLED
-    //serialStore = "";
-    delay(100);
- // }
+    Serial.print(test);
+    oled.println(test);
+    oled.display();
+
+
 }
