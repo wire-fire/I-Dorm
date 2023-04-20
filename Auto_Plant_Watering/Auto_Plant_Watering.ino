@@ -16,5 +16,6 @@ void loop() {
   hold = millis();
   while (millis()<=(hold+43200000)) {
     digitalWrite(relayPin, HIGH); //Turn off pump
+    Serial.print(millis());
   }
 }
