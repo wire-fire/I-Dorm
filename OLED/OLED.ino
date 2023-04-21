@@ -25,7 +25,7 @@ void loop() {
     oled.setTextColor(WHITE);     // text color
     oled.setCursor(5, 16);        // position to display
     percent = ((millis() - hold)/100);
-    oled.print(String(percent));
+    oled.print(percent);
     oled.print("%");
     oled.display();
     Serial.print(percent);
