@@ -42,3 +42,15 @@ void loop() {
     oled.display();
   }
 }
+
+void upHold() {
+  hold += 1;
+  loop();
+}
+
+void downHold() {
+  if (hold > 1) {
+    hold -= 1;
+  }
+  loop();
+}
