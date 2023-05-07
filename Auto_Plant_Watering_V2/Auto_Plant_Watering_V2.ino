@@ -36,7 +36,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   digitalWrite(relayPin, LOW);   //Turn on pump
-  delay(1000);                   //Delay for onSec seconds
+  delay(5000);                   //Delay for onSec seconds
   digitalWrite(relayPin, HIGH);  //Turn off pump
   holdTime = millis();
   while (millis() <= (holdTime + hold)) {
