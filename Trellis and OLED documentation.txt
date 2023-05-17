@@ -1,0 +1,25 @@
+/*
+  TRELLIS INFO (Wire and Adafruit_Trellis libraries)
+  Call Adafruit_Trellis & Adafruit_TrellisSet as seen below first
+  readSwitches() - Reads switch data
+  justPressed() - Checks to see if a switch was just pressed after readSwitches() was called
+  justReleased() - Checks to see if switch was just released after readSwitches() was called
+  setLED(switch#) - Turns on corresp. switch LED
+  clrLED(switch#) - Turns off corresp. switch LED
+  isLED(switch#) - Used in logic statements, checks if LED is on or off (returns 1 or true idk which one if LED is on)
+  writeDisplay() - Writes updated LED data to trellis
+  begin(ADDR) - Begins OLED communication, use 0x70 for 1 display (0x71, 0x72, 0x73 for other connected ones)
+*/
+
+/*
+  OLED INFO (Wire, Adafruit_GFX, and Adafruit_SSD1306 libraries)
+  Call this first Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+  SCREEN_WIDTH is set to 128, SCREEN_HEIGHT is set to 64
+  clearDisplay() - Clears display
+  setTextSize(#) - Sets text size
+  setTextColor(Color) - Sets text color if you're fancy like that
+  oled.setCursor(x,y) - Sets cursor position on display
+  print(something) - Prints something to the OLED
+  display() - Displays what has been printed to the OLED
+  begin(SSD1306_SWITCHCAPVCC, ADDR) - begins OLED communication, default ADDR is 0x3C
+*/
