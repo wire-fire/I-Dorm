@@ -45,6 +45,13 @@ void setup() {
 }
 
 void loop() { // run over and over
-  mySerial.print("Hello World?");
-  delay(2000);
+  for (int i = 0; i<=10 ; i++){
+    mySerial.print("{2,");
+    mySerial.print(i);
+    mySerial.print("}");
+    Serial.print("{2,");
+    Serial.print(i);
+    Serial.print("}\n");
+    delay(1000);
   }
+}
