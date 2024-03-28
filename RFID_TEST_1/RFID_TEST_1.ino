@@ -10,6 +10,7 @@
 MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance.
 MFRC522::MIFARE_Key key;
 void setup() {
+  pinMode(13,OUTPUT);
   Serial.begin(9600);  // Initialize serial communications with the PC
   while (!Serial)
     ;                  // Do nothing if no serial port is opened (added for Arduinos based on ATMEGA32U4)
@@ -84,5 +85,12 @@ bool UID_check(int array1[4], int array2[4]) {
   }
 }
 void auth() {
+  int i;
   Serial.println("Authentication Successful!\nWelcome to the Program!");
+  for (i=0;i<3;i++){
+    digitalWrite(13,HIGH);
+    delay(500);
+    digitalWrite(13, LOW);
+    delay(500);
+  }
 }
