@@ -28,8 +28,7 @@ void setup() {
   // initialize OLED display with address 0x3C for 128x64
   if (!oled.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println(F("SSD1306 allocation failed"));
-    while (true)
-      ;
+    while (true);
   }
 }
 
